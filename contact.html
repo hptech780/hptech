@@ -14,7 +14,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -28,7 +28,12 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
- 
+  <style>
+    /* Hide the dark mode toggle button */
+    .switch {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -43,21 +48,20 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a  href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="courses.html">Courses</a></li>
           <li><a href="trainers.html">Trainers</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-
+          <li><a  href="events.html">Events</a></li>
           <li><a class="active" href="contact.html">Contact</a></li>
-        </ul>
-            <!-- Dark mode styles -->
+          <li>  
+              <!-- Dark mode styles -->
             <label class="switch">
               <input type="checkbox" id="dark-mode-toggle">
               <span class="slider round"></span>
-            </label>
-       
+            </label> </li>
+        </ul>
+      
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -74,9 +78,6 @@
         <h2>Contact Us</h2>
         <p>"Contact us for any inquiries or support needs. Our team is available to assist you 24/7. 
           You can reach us by phone, email, or through our website contact form. We look forward to hearing from you and addressing any concerns you may have."
-
-
-
         </p>
       </div>
     </div><!-- End Breadcrumbs -->
@@ -84,9 +85,10 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div data-aos="fade-up">
-      </div>        <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.780721977889!2d85.28114339999999!3d27.6931714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb187a97f390b1%3A0xec3f47092df0d4ca!2sKalanki%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1674316607169!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></center>
-
-
+      </div>
+      <center>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14126.58030939601!2d85.30780789744922!3d27.728242712421697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191ed757779f%3A0xa3fb7fed922d73e8!2sSamakhusi%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1716342623791!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </center>
       <div class="container" data-aos="fade-up">
 
         <div class="row mt-5">
@@ -96,7 +98,7 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>kalanki, Kathmandu, Nepal</p>
+                <p>Samakhusi, Kathmandu, Nepal</p>
               </div>
 
               <div class="email">
@@ -110,17 +112,12 @@
                 <h4>Call:</h4>
                 <p>+977-9806400774</p>
               </div>
-
             </div>
-
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="https://api.web3forms.com/submit" method="POST" class="php-email-form">
-
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="php-email-form">
               <input type="hidden" name="access_key" value="414422a4-382e-4447-a335-09d7340c49fd">
-
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -135,15 +132,39 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-
+            <div id="formMessage" class="text-center mt-3"></div>
           </div>
+          
+          <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent the default form submission
+
+              var form = event.target;
+              var formData = new FormData(form);
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', form.action, true);
+
+              xhr.onload = function() {
+                if (xhr.status === 200) {
+                  // Show success message
+                  document.getElementById('formMessage').innerHTML = '<p class="text-success">Your message has been sent successfully!</p>';
+                  form.reset(); // Reset the form fields
+                } else {
+                  // Show error message
+                  document.getElementById('formMessage').innerHTML = '<p class="text-danger">There was an error sending your message. Please try again later.</p>';
+                }
+              };
+
+              xhr.onerror = function() {
+                // Show error message
+                document.getElementById('formMessage').innerHTML = '<p class="text-danger">There was an error sending your message. Please try again later.</p>';
+              };
+
+              xhr.send(formData);
+            });
+          </script>
 
         </div>
 
@@ -162,9 +183,9 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>HpTech</h3>
             <p>
-              Kalanki<br>
+              Samakhusi<br>
               Kathmandu<br>
-             Nepal<br><br>
+              Nepal<br><br>
               <strong>Phone:</strong> +977-9806400774<br>
               <strong>Email:</strong> hemrajpant780@gmail.com<br>
             </p>
@@ -192,8 +213,6 @@
             </ul>
           </div>
 
-          
-
         </div>
       </div>
     </div>
@@ -205,7 +224,6 @@
           &copy; Copyright <strong><span>HpTech</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-      
           Designed by <a href="https://www.facebook.com/nepopko.lureking.3">Hemraj Pant</a>
         </div>
       </div>

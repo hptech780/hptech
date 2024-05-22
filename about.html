@@ -27,7 +27,12 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <style>
+    /* Hide the dark mode toggle button */
+    .switch {
+      display: none;
+    }
+  </style>
 
 </head>
 
@@ -43,20 +48,20 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a  href="index.html">Home</a></li>
           <li><a class="active" href="about.html">About</a></li>
           <li><a href="courses.html">Courses</a></li>
           <li><a href="trainers.html">Trainers</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-
-          
+          <li><a  href="events.html">Events</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li>  
+              <!-- Dark mode styles -->
+            <label class="switch">
+              <input type="checkbox" id="dark-mode-toggle">
+              <span class="slider round"></span>
+            </label> </li>
         </ul>
-        <label class="switch">
-          <input type="checkbox" id="dark-mode-toggle">
-          <span class="slider round"></span>
-        </label>
+      
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -272,13 +277,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>"Sign up for our newsletter to stay updated on the latest news and promotions. Click here to join now."</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+          
 
         </div>
       </div>
