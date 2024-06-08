@@ -1,0 +1,248 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #535151, #ebe2e3); /* Vibrant gradient background */
+    color: #fff; /* Text color */
+}
+
+/* Header and Footer Styles */
+.header, .footer {
+    background-color: #2b2e4a; /* Dark purple background for header and footer */
+    color: #fff; /* Text color for header and footer */
+    padding: 1rem 2rem; /* Padding for header and footer */
+}
+
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #adb5bd;
+}
+
+/* Main Blog Container Styles */
+#blog-posts {
+    margin-top: 2rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff; /* White background for cards */
+    border-radius: 20px; /* Rounded corners for cards */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift cards on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Larger title text */
+    font-weight: bold; /* Bold font weight */
+    color: #333; /* Text color */
+    margin-bottom: 1rem; /* Add margin to bottom */
+}
+
+.card-body {
+    padding: 2rem; /* Increased padding for content */
+}
+
+.card-footer {
+    padding: 1rem 2rem; /* Padding for footer */
+    background-color: #f0f0f0; /* Light background for footer */
+    border-bottom-left-radius: 20px; /* Rounded corners for footer */
+    border-bottom-right-radius: 20px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #ff758c; /* Pink background for buttons */
+    color: #fff; /* Text color for buttons */
+    border: none; /* No border */
+    padding: 0.75rem 1.5rem; /* Padding for buttons */
+    border-radius: 30px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.btn:hover {
+    background-color: #ff7eb3; /* Darker pink background on hover */
+}
+
+/* Image Styles */
+.card-img-top {
+    width: 100%;
+    height: 300px; /* Increased height for the image */
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Description Styles */
+.description {
+    color: #6c757d;
+}
+
+/* Like, comment, and share buttons */
+.like-btn,
+.comment-btn,
+.share-btn {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.5rem 1rem; /* Added padding */
+    color: #6c757d;
+    transition: all 0.3s ease; /* Added transition */
+}
+
+.like-btn i,
+.comment-btn i,
+.share-btn i {
+    font-size: 1.5rem;
+}
+
+.like-btn:hover,
+.comment-btn:hover,
+.share-btn:hover {
+    color: #1877f2; /* Facebook blue */
+}
+
+/* Comments and reply section */
+.comment-input,
+.reply-input {
+    width: calc(100% - 40px);
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0.5rem; /* Added margin */
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.comment-btn,
+.reply-btn {
+    border-radius: 0.25rem;
+    background-color: #007bff; /* Updated background color */
+    color: #ffffff;
+    border: 1px solid #007bff; /* Updated border color */
+    transition: all 0.3s ease; /* Added transition */
+}
+
+.comment-btn:hover,
+.reply-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+    border-color: #0056b3; /* Darker border color */
+}
+
+.comments,
+.replies {
+    margin-top: 1rem;
+}
+
+.comment {
+    border-bottom: 1px solid #ddd;
+    padding: 0.75rem 0;
+}
+
+.reply {
+    padding: 0.25rem 1rem;
+    margin-left: 2rem;
+    border-left: 2px solid #ddd;
+}
+
+.comment-text
+.reply-text {
+    margin-bottom: 0.5rem;
+   
+    
+}
+.comment-text {
+    color: green;
+}
+
+
+.comment-controls,
+.reply-controls {
+    margin-top: 0.5rem;
+}
+
+/* Image and card styling */
+.card-img-top {
+    width: 100%;
+    height: 250px; /* Increased height for the image */
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Read More button */
+.read-more {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #00ab1f;
+    text-decoration: underline;
+}
+
+/* Styling for title and description */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.description {
+    color: #6c757d;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Footer styling */
+footer .container {
+    padding: 2rem 1rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #adb5bd;
+}
+.social-icon {
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    background-color: white;
+    padding: 2px; /* Optional: Add padding to increase the spacing between the icon and the outline */
+ }
+.social-icon:hover {
+    transform: scale(1.2); /* Zoom in by 10% on hover */
+}
+
+
+

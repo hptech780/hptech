@@ -1,0 +1,52 @@
+{
+    "posts": [
+      {
+        "title": "React Contact Form with Web3Forms API Integration",
+        "description": "Developed a contact form using React.js with integration of the Web3Forms API. The contact form allows users to submit their name, email, phone number, and message. Upon submission, the form data is sent to the Web3Forms API, which handles the backend processing and sends the form data to the specified email address. Implemented error handling to display success or error messages based on the API response. Used React Hooks for state management and form submission handling. A straightforward and efficient solution for creating a contact form with email integration in React applications.",
+        "imageSrc": "resources/img/blog5.png",
+        "id":0,
+        "likes": [],
+        "comments": []
+      },
+      
+      {
+        "title": "JavaFX Chat Application",
+        "description": "Built a real-time chat application using JavaFX for the front-end and Java for the back-end. The app supports multiple users, sending text messages, and even sharing images! Key features include real-time messaging, user authentication, image sharing, and a dynamic UI. Tech stack includes JavaFX for the front-end and Java with Socket Programming for real-time communication. Methods used include Socket Programming, Java Object Serialization, Multithreading, JavaFX Controls, and Base64 Encoding. A hands-on project exploring JavaFX, Socket Programming, and UI design. Exciting to implement features like image sharing and real-time messaging!",
+        "imageSrc": "resources/img/blog1.png",
+        "id":1,
+
+        "likes": [],
+        "comments": []
+      },
+      {
+        "title": "Hackfest 2024 Experience",
+  "description": "No matter if we lose, we learn a lot. We also enjoy a lot. Through this experience, we gain insights into teamwork and build strong connections in the tech network. Thank you so much, Nepal Open Source Klub(NOSK), and to all the team members and mentors who have been a part of this journey. #hackathon #hackfest2024 #ncit #nosk",
+        "imageSrc": "resources/img/blog2.png",
+        "id":2,
+
+        "likes": [],
+        "comments": []
+      },
+      {
+    
+            "title": "Hackathon Journey: Healthcare Crowdfunding WebApp",
+            "description": "Just wrapped up an incredible 72-hour hackathon journey with my brilliant team! Despite the challenges, we gave it our all in developing a healthcare crowdfunding webapp using HTML, CSS, JS, and Django. 🏥💻 Grateful for the learning, collaboration, and sleepless nights. Onwards and upwards! 💪 #hackathon #techinnovation #TeamWork #hackfest2024 #ncit",
+        "imageSrc": "resources/img/blog3.png",
+        "id":3,
+
+        "likes": [],
+        "comments": []
+      },
+      {
+        "title": "Gratitude for Insightful Git Classes",
+  "description": "Grateful for the insightful Git classes provided by my senior, Bibek Dhakal. His daily 2-hour sessions were invaluable in building my understanding. Now, thanks to the engaging sessions by senior Satya Raj Awasthi and Abhilekh Gautam from the NOSK team's workshop, I'm enjoying a helpful revision. Appreciate the knowledge and guidance from seniors 🙏😍 #git #github #opensource #gitlab",
+  
+        "imageSrc": "resources/img/blog4.png",
+        "id":4,
+
+        "likes": [],
+        "comments": []
+      }
+    ]
+  }
+  
