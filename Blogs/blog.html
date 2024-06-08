@@ -25,7 +25,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Portfolio</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -47,6 +47,32 @@
     
     <!-- Link script.js for JavaScript functionality -->
     <script src="resources/js/script.js"></script>
+    <!-- <script type="module" src="resources/js/scripts.js"></script> -->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+      import { getDatabase, ref, get, set, update, push, child, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+      
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBhCHyajKtoAPTUHMw0pp0KKRdXt6a6BbQ",
+        authDomain: "hptech-4764d.firebaseapp.com",
+        projectId: "hptech-4764d",
+        storageBucket: "hptech-4764d.appspot.com",
+        messagingSenderId: "1063805793062",
+        appId: "1:1063805793062:web:1d0f3b1cd6a1fbefda87e7",
+        measurementId: "G-FGC2NKX1QJ"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getDatabase(app);
+    </script>
+    
+
     <footer>
         <!-- Footer -->
         <footer class="bg-primary text-center text-white">
