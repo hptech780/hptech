@@ -11,13 +11,11 @@ body {
     padding: 1rem 2rem; /* Padding for header and footer */
 }
 
-.navbar {
-    padding: 1rem 2rem;
-}
 
 .nav-link {
-    color: #ffffff;
+    color: #5d4747;
     transition: color 0.3s ease;
+    padding: 10px;
 }
 
 .nav-link:hover {
