@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -85,53 +84,17 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-1.jpg" alt="Event 1">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Introduction to Web Development</a></h5>
-                <p class="fst-italic text-center">Sunday, June 15th at 10:00 am</p>
-                <p class="card-text">Dive into the basics of web development in this comprehensive workshop. Learn HTML, CSS, and JavaScript to start building your own websites from scratch.</p>
-              </div>
-            </div>
+          <div class="col-12">
+            <h3>Upcoming Events</h3>
           </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-2.jpg" alt="Event 2">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Advanced Marketing Techniques</a></h5>
-                <p class="fst-italic text-center">Friday, July 20th at 2:00 pm</p>
-                <p class="card-text">Enhance your marketing skills with advanced strategies and tools. This seminar covers the latest trends in digital marketing, SEO, and social media campaigns.</p>
-              </div>
-            </div>
+          <div id="upcoming-events" class="row">
+            <!-- Upcoming events will be loaded here dynamically -->
           </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-3.jpg" alt="Event 3">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">UI/UX Design Workshop</a></h5>
-                <p class="fst-italic text-center">Saturday, August 10th at 1:00 pm</p>
-                <p class="card-text">Join us for a hands-on workshop focused on UI/UX design. Learn how to create user-friendly interfaces and enhance the user experience for web and mobile applications.</p>
-              </div>
-            </div>
+          <div class="col-12 mt-4">
+            <h3>Completed Events</h3>
           </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-4.jpg" alt="Event 4">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Cybersecurity Essentials</a></h5>
-                <p class="fst-italic text-center">Monday, September 5th at 11:00 am</p>
-                <p class="card-text">Learn the fundamentals of cybersecurity in this essential workshop. Understand the common threats and vulnerabilities and how to protect your digital assets.</p>
-              </div>
-            </div>
+          <div id="completed-events" class="row">
+            <!-- Completed events will be loaded here dynamically -->
           </div>
         </div>
 
@@ -151,7 +114,7 @@
             <h3>HpTech</h3>
             <p>
               Kalanki <br>
-             Kathmandu<br>
+              Kathmandu<br>
               Nepal <br><br>
               <strong>Phone:</strong> +977-9806400774<br>
               <strong>Email:</strong> hemrajpant780@gmail.com<br>
@@ -214,7 +177,72 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Event data JSON
+    const eventData = {
+      "upcoming": [
+        {
+          "title": "AI and Machine Learning Workshop",
+          "image": "assets/img/events/Ai-ml.png",
+          "description": "A comprehensive workshop on AI and machine learning techniques.",
+          "link": "upcoming_event_detail.html?id=1"
+        },
+        {
+          "title": "Cybersecurity Basics",
+          "image": "assets/img/events/cybersecurity.jpeg",
+          "description": "Learn the fundamentals of cybersecurity to protect your digital assets.",
+          "link": "upcoming_event_detail.html?id=2"
+        }
+      ],
+      "completed": [
+        {
+          "title": "3-days of Web Development Bootcamp",
+          "image": "assets/img/events/webdevelopment.jpg",
+          "description": "Dive into the basics of web development in this comprehensive workshop. Learn HTML, CSS, and JavaScript to start building your own websites from scratch.",
+          "link": "completed_event_detail.html?id=1"
+        }
+      ]
+    };
 
+    // Load event data dynamically
+    window.onload = function() {
+      const upcomingEventsContainer = document.getElementById('upcoming-events');
+      const completedEventsContainer = document.getElementById('completed-events');
+
+      eventData.upcoming.forEach(event => {
+        const eventCard = `
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="${event.image}" alt="${event.title}">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="${event.link}">${event.title}</a></h5>
+                <p class="card-text">${event.description}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        upcomingEventsContainer.innerHTML += eventCard;
+      });
+
+      eventData.completed.forEach(event => {
+        const eventCard = `
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="${event.image}" alt="${event.title}">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="${event.link}">${event.title}</a></h5>
+                <p class="card-text">${event.description}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        completedEventsContainer.innerHTML += eventCard;
+      });
+    };
+  </script>
 </body>
-
 </html>
