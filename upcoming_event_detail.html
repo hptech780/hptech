@@ -188,14 +188,16 @@
         "description": "A comprehensive workshop on AI and machine learning techniques.",
         "date": "2024-07-20",
         "location": "HpTech Headquarters",
-        "details": "Join us for a 3-day intensive workshop on AI and machine learning. Learn from industry experts and get hands-on experience."
+        "details": "Join us for a 3-day intensive workshop on AI and machine learning. Learn from industry experts and get hands-on experience.",
+        "formUrl": "https://forms.gle/oUJtGoecN5m9Y7Bp9"
       },
       "2": {
         "title": "Cybersecurity Basics",
         "description": "Learn the fundamentals of cybersecurity to protect your digital assets.",
         "date": "2024-08-15",
         "location": "HpTech Online Platform",
-        "details": "This workshop covers the basics of cybersecurity, including common threats and protection methods."
+        "details": "This workshop covers the basics of cybersecurity, including common threats and protection methods.",
+        "formUrl": "https://forms.gle/your-google-form-url-2"
       }
     };
 
@@ -212,7 +214,7 @@
           <p><strong>Date:</strong> ${event.date}</p>
           <p><strong>Location:</strong> ${event.location}</p>
           <p>${event.details}</p>
-          <a href="register.html?event=${eventId}" class="btn btn-primary">Register Now</a>
+          <a href="${event.formUrl}" class="btn btn-primary" target="_blank">Register Now</a>
         `;
         eventDetailContainer.innerHTML = eventInfo;
       } else {
