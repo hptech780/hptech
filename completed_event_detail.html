@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Events Detail</title>
+  <title id="page-title">Events Detail</title>
   <meta content="Discover the latest events and workshops organized by HpTech. Join us to learn and grow together." name="description">
   <meta content="HpTech events, tech workshops, webinars, tech meetups" name="keywords">
 
@@ -85,8 +85,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">HpTech</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -98,7 +96,6 @@
           <li><a class="active" href="events.html">Events</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li>
-            <!-- Dark mode styles -->
             <label class="switch">
               <input type="checkbox" id="dark-mode-toggle">
               <span class="slider round"></span>
@@ -203,9 +200,9 @@
     const eventDetails = {
       "1": {
         "title": "3-days of Web Development Bootcamp",
-        "description": "Dive into the basics of web development in this comprehensive workshop.",
-        "date": "2024-06-7",
-        "location": "virtual (Zoom)",
+        "date": "2023-07-20",
+        "location": "Tech Hub, Kathmandu",
+        "description": "Join us for an intensive 3-day bootcamp on web development.",
         "details": "Learn HTML, CSS, and JavaScript to start building your own websites from scratch.",
         "students": [
           "Aayush Prasai", "Rashi Bista", "Binita Pandey", "Nikhil Khatri", "Abhesh Mandal",
@@ -247,6 +244,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const eventId = urlParams.get('id');
       const eventDetailContainer = document.getElementById('event-info');
+      const pageTitle = document.getElementById('page-title');
       
       if (eventDetails[eventId]) {
         const event = eventDetails[eventId];
@@ -263,12 +261,13 @@
           <ul>${mentorList}</ul>
           <h3>Students</h3>
           <ul>${studentList}</ul>
-          <h3>Certificates ${certificateImages}</h3>
           <div class="certificates">${certificateImages}</div>
         `;
         eventDetailContainer.innerHTML = eventInfo;
+        pageTitle.textContent = event.title; // Update the page title
       } else {
         eventDetailContainer.innerHTML = "<p>Event not found.</p>";
+        pageTitle.textContent = "Event Not Found"; // Update the page title
       }
     };
   </script>

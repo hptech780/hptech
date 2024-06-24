@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Events Detail</title>
+  <title id="page-title">Events Detail</title>
   <meta content="Discover the latest events and workshops organized by HpTech. Join us to learn and grow together." name="description">
   <meta content="HpTech events, tech workshops, webinars, tech meetups" name="keywords">
 
@@ -182,29 +182,31 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    const eventDetails = {
-      "1": {
-        "title": "AI and Machine Learning Workshop",
-        "description": "A comprehensive workshop on AI and machine learning techniques.",
-        "date": "2024-07-20",
-        "location": "HpTech Headquarters",
-        "details": "Join us for a 3-day intensive workshop on AI and machine learning. Learn from industry experts and get hands-on experience.",
-        "formUrl": "https://forms.gle/oUJtGoecN5m9Y7Bp9"
-      },
-      "2": {
-        "title": "Cybersecurity Basics",
-        "description": "Learn the fundamentals of cybersecurity to protect your digital assets.",
-        "date": "2024-08-15",
-        "location": "HpTech Online Platform",
-        "details": "This workshop covers the basics of cybersecurity, including common threats and protection methods.",
-        "formUrl": "https://forms.gle/your-google-form-url-2"
-      }
-    };
+  const eventDetails = {
+  "1": {
+    "title": "JavaScript Bootcamp",
+    "description": "Dive deep into the world of JavaScript with our comprehensive bootcamp. From basics to advanced topics, master the essential language of the web.",
+    "date": "2024-06-30",
+    "location": "Virtual (Zoom)",
+    "details": "Join us for a 3-day intensive bootcamp on JavaScript. Learn from industry experts and get hands-on experience with real-world projects.",
+    "formUrl": "https://forms.gle/arJqSs9x8vU7929u8"
+  },
+  "2": {
+    "title": "ReactJs Bootcamp",
+    "description": "Join our ReactJs Bootcamp to learn how to build dynamic and responsive web applications. Gain hands-on experience with React components, hooks, and state management.",
+    "date": "2024-07-09",
+    "location": "Virtual (Zoom)",
+    "details": "This bootcamp covers the essentials of ReactJs, including component-based architecture, hooks, and state management. Perfect for developers looking to enhance their skills.",
+    "formUrl": "https://forms.gle/your-google-form-url-2"
+  }
+};
+
 
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const eventId = urlParams.get('id');
       const eventDetailContainer = document.getElementById('event-info');
+      const pageTitle = document.getElementById('page-title');
       
       if (eventDetails[eventId]) {
         const event = eventDetails[eventId];
@@ -217,8 +219,10 @@
           <a href="${event.formUrl}" class="btn btn-primary" target="_blank">Register Now</a>
         `;
         eventDetailContainer.innerHTML = eventInfo;
+        pageTitle.textContent = event.title; // Update the title of the webpage
       } else {
         eventDetailContainer.innerHTML = "<p>Event not found.</p>";
+        pageTitle.textContent = "Event Not Found"; // Update the title of the webpage if event is not found
       }
     };
   </script>
